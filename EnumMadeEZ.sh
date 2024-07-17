@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 RED=$(tput setaf 1)
 GREEN=$(tput setaf 2)
 BLUE=$(tput setaf 4)
@@ -14,8 +15,7 @@ echo "| |__| | | | |_| | | | | | | |  | | (_| | (_| |  __// /  | |___./ /___";
 echo "\____/_| |_|\__,_|_| |_| |_\_|  |_/\__,_|\__,_|\___/_/   \____/\_____/";
 echo "                                                                      ";
 echo "                                                                      ";
-echo "${GREEN}*** EnumMadeEz, a tool devlopped by Hash-AK. ***${NC}"
-echo "${GREEN}https://github.com/Hash-AK/EnumMadeEZ/${NC}"
+echo "${GREEN}*** EnumMadeEz, a tool devlopped by HashAK. ***${NC}"
 echo ""
 echo "${RED}[*] Hostname${NC}"
 echo "${GREEN}$(hostname)${NC}"
@@ -72,3 +72,4 @@ if [ "$ans" = "y" ]; then
 elif [ "$ans" = "n" ]; then
   echo "${RED}ok conserving /tmp/EnumMadeEz${NC}"
 fi
+
