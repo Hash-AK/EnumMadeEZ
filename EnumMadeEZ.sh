@@ -15,7 +15,7 @@ echo "| |__| | | | |_| | | | | | | |  | | (_| | (_| |  __// /  | |___./ /___";
 echo "\____/_| |_|\__,_|_| |_| |_\_|  |_/\__,_|\__,_|\___/_/   \____/\_____/";
 echo "                                                                      ";
 echo "                                                                      ";
-echo "${GREEN}*** EnumMadeEz, a tool devlopped by HashAK. ***${NC}"
+echo "${GREEN}*** EnumMadeEz, a tool devlopped by Hash-AK. ***${NC}"
 echo ""
 echo "${RED}[*] Hostname${NC}"
 echo "${GREEN}$(hostname)${NC}"
