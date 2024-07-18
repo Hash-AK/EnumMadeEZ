@@ -14,7 +14,7 @@ More coming later.
 
 ****INSTALLATION****
 
-sudo apt update && sudo apt install git
+`sudo apt update && sudo apt install git`
 
 `git clone https://github.com/Hash-AK/EnumMadeEZ`
 
