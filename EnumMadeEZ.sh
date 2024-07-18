@@ -39,7 +39,7 @@ echo ""
 echo "${RED}*********************"
 echo ""
 echo "${RED}[*] Checking for SSH keys...${NC}"
-if [ "$(ls -la ~/.ssh/)" ]; then
+if [ "$(ls -la ~/.ssh/ 2>/dev/null)" ]; then
   echo "${GREEN}[*].ssh directory found...${NC}"
   echo "${GREEN}[*]Searching for ID* Files in .ssh/ ..."
   if [ "$(ls -la ~/.ssh/id* 2>/dev/null)" ]; then
