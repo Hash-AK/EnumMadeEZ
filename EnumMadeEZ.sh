@@ -40,10 +40,10 @@ echo "${RED}*********************"
 echo ""
 echo "${RED}[*] Checking for SSH keys...${NC}"
 if [ "$(ls -la ~/.ssh/)" ]; then
-  echo "${GREEN}[*] SSH directory found...${NC}"
-  echo "${GREEN}[*]searching for ID* Files in .ssh/ ..."
-  if [ "$(ls ~/.ssh/id*)" ]; then
-    echo "${GREEN}[*]id* files found in the .ssh directory! Here are they :${NC}"
+  echo "${GREEN}[*].ssh directory found...${NC}"
+  echo "${GREEN}[*]Searching for ID* Files in .ssh/ ..."
+  if [ "$(ls -la ~/.ssh/id*)" ]; then
+    echo "${GREEN}[*]Id* files found in the .ssh directory! Here are they :${NC}"
     echo "${BLUE}"
     ls ~/.ssh/id*
     echo "${NC}" 
