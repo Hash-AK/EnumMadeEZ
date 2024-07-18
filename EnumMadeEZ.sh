@@ -41,15 +41,21 @@ echo ""
 echo "${RED}[*] Checking for SSH keys...${NC}"
 if [ "$(ls -la ~/.ssh/)" ]; then
   echo "${GREEN}[*] SSH directory found...${NC}"
-  echo "${GREEN}[*]searching for ID* Files in .ssh/ :"
-  echo "${BLUE}"
-  ls ~/.ssh/id*
-  echo "${NC}" 
-  cat ~/.ssh/id* > /tmp/EnumMadeEz/SSHKeys.txt
-  echo "${GREEN}All id* files copyed to /tmp/EnumMadeEz/SSHKeys.txt${NC}"
-  echo "${GREEN}$(grep -o "BEGIN" /tmp/EnumMadeEz/SSHKeys.txt | wc -l) BEGIN word occurence in the keys...${NC}"
+  echo "${GREEN}[*]searching for ID* Files in .ssh/ ..."
+  if [ "$(ls ~/.ssh/id*)" ]; then
+    echo "${GREEN}[*]id* files found in the .ssh directory! Here are they :${NC}"
+    echo "${BLUE}"
+    ls ~/.ssh/id*
+    echo "${NC}" 
+    cat ~/.ssh/id* > /tmp/EnumMadeEz/SSHKeys.txt
+    echo "${GREEN}All id* files copyed to /tmp/EnumMadeEz/SSHKeys.txt${NC}"
+    echo "${GREEN}$(grep -o "BEGIN" /tmp/EnumMadeEz/SSHKeys.txt | wc -l) BEGIN word occurence in the keys...${NC}"
+  else
+    echo "${GREEN}[*]Sorry, no id* files found in the .ssh directory${NC}"
+  fi
+  
 else 
-  echo "${GREEN}[*]Sorry, no SSH key found in ~/.ssh/ . ${NC}"
+  echo "${GREEN}[*]Sorry, no files in the  ~/.ssh/ or the directory isnt existing${NC}"
 fi
 echo ""
 echo "${RED}*********************"
