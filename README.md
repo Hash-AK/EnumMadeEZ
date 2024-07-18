@@ -8,7 +8,7 @@ This is a WIP script used to enumerate and find system info about a Linux machin
 
 - The distro's version
 
-- The ssh keyes (if existing) in ~/.ssh/
+- The ssh IDs file (if existing) in ~/.ssh/ (basically any file caught by regex id* in ~/.ssh)
 
 More coming later. 
 
