@@ -20,7 +20,7 @@ echo ""
 echo "${RED}[*] Hostname${NC}"
 echo "${GREEN}$(hostname)${NC}"
 echo "${RED}[*] Release [shortened] ${NC}"
-echo "${GREEN}$(cat /etc/*-release | grep VERSION_ID)${NC}"
+echo "${GREEN}$(cat /etc/*-release | grep NAME) $(cat /etc/*-release | grep VERSION_ID)${NC}"
 cat /etc/*-release > /tmp/EnumMadeEz/release
 echo -n "${RED}Show full release? [y/n]: ${NC}"
 read -r ans
