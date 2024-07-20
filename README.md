@@ -17,6 +17,22 @@ This is a WIP script used to enumerate and find system info about a Linux machin
 
 More coming later. 
 
+****COMPTIBILITY****
+I tested the script on the following distros ( most of them on official docker containers) :
+- Kali Linux 2024.2
+- Ubuntu 18.04.6 LTS
+- Ubuntu 20.04.6 LTS
+- Ubuntu 22.04.4 LTS
+- Fedora Linux 40 (Container Image) (color and hostname didnt work correctly and printed errors)
+- CentOS Linux 8 (color didnt work either, but hostname did)
+- Arch Linux VERSION_ID=20240714.0.246936 (hostname didnt work but color did)
+- Alpine Linux v3.20.1 (color didnt work)
+- Debian GNU/Linux 12 (bookworm)
+- openSUSE Leap 15.6 (hostname didnt work)
+
+And thats it. For the hostname roblem im not sure if its because thoose where minimal install (Docker images).
+
+
 ****INSTALLATION****
 The instalation is pretty simple, install git, git clone the repo then give exec permission to the file, and eecute it! No argument needed
 
