@@ -30,7 +30,8 @@ I tested the script on the following distros ( most of them on official docker c
 - Debian GNU/Linux 12 (bookworm)
 - openSUSE Leap 15.6 (hostname didnt work)
 
-And thats it. For the hostname roblem im not sure if its because thoose where minimal install (Docker images).
+Some dirstros had problem with printing tput/ansi color with echo so i modified the script to use printf and optionnally ansi colors instead of tput)
+And thats it. For the hostname problem im not sure if its because thoose where minimal install (Docker images).
 
 
 # INSTALLATION
