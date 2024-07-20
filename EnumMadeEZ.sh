@@ -97,4 +97,4 @@ if [ "$ans" = "y" ]; then
     printf "${GREEN}Done!\n${NC}"
 elif [ "$ans" = "n" ]; then
     printf "${RED}ok conserving /tmp/EnumMadeEz${NC}\n"
-fi
+fi
