@@ -17,7 +17,7 @@ This is a WIP script used to enumerate and find system info about a Linux machin
 
 More coming later. 
 
-#****COMPTIBILITY****
+#COMPTIBILITY
 I tested the script on the following distros ( most of them on official docker containers) :
 - Kali Linux 2024.2
 - Ubuntu 18.04.6 LTS
@@ -33,7 +33,7 @@ I tested the script on the following distros ( most of them on official docker c
 And thats it. For the hostname roblem im not sure if its because thoose where minimal install (Docker images).
 
 
-#****INSTALLATION****
+#INSTALLATION
 The instalation is pretty simple, install git, git clone the repo then give exec permission to the file, and eecute it! No argument needed
 
 `sudo apt update && sudo apt install git`
