@@ -23,10 +23,10 @@ I tested the script on the following distros ( most of them on official docker c
 - Ubuntu 18.04.6 LTS
 - Ubuntu 20.04.6 LTS
 - Ubuntu 22.04.4 LTS
-- Fedora Linux 40 (Container Image) (color and hostname didnt work correctly and printed errors)
-- CentOS Linux 8 (color didnt work either, but hostname did)
-- Arch Linux VERSION_ID=20240714.0.246936 (hostname didnt work but color did)
-- Alpine Linux v3.20.1 (color didnt work)
+- Fedora Linux 40 (Container Image) (hostname didnt work correctly and printed errors)
+- CentOS Linux 8
+- Arch Linux VERSION_ID=20240714.0.246936 (hostname didnt work)
+- Alpine Linux v3.20.1
 - Debian GNU/Linux 12 (bookworm)
 - openSUSE Leap 15.6 (hostname didnt work)
 
