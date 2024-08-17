@@ -1,5 +1,7 @@
 #!/bin/bash
 
+
+# Compatibility checking 
 # Check if tput is available
 if command -v tput >/dev/null 2>&1; then
     # Define colors using tput
@@ -14,7 +16,6 @@ else
     BLUE='\033[34m'
     NC='\033[0m'  # Reset color
 fi
-
 # Create directory if it doesn't exist
 mkdir -p /tmp/EnumMadeEz/
 
@@ -33,7 +34,7 @@ printf "${GREEN}https://github.com/Hash-AK/EnumMadeEZ${NC}\n\n"
 
 # Print hostname
 printf "${RED}[*] Hostname${NC}\n"
-printf "${GREEN}$(hostname)${NC}\n"
+printf "${GREEN}$(hostname 2>/dev/null || cat /proc/sys/kernel/hostname)${NC}\n"
 
 # Print release information (shortened for brevity)
 printf "${RED}[*] Release [shortened] ${NC}\n"
@@ -86,8 +87,13 @@ printf "${GREEN}"
 awk -F: '($3 >= 1000 && $1 != "nobody") || $1 == "root" {print $1}' /etc/passwd > /tmp/EnumMadeEz/users.txt
 cat /tmp/EnumMadeEz/users.txt
 printf "${NC}\n"
+printf "${RED}[*] Files with SUID bits : (saved to /tmp/EnumMadeEz/SUIDFiles.txt \n${GREEN}"
+find / -perm -u=s -type f 2>/dev/null > /tmp/EnumMadeEz/SUIDFiles.txt || echo "No SUID Files found" 
+printf "$(cat /tmp/EnumMadeEz/SUIDFiles.txt)\n${NC}"
 
-# Ask if the user wants to auto-clean /tmp/EnumMadeEz
+
+
+# Ask if the user wants to autoclean /tmp/EnumMadeEz
 printf "${RED}Do you want to auto clean? CAUTION: If you do so, all info in /tmp/EnumMadeEz/ will be deleted. [y/n]: ${NC}"
 read -r ans
 ans=$(printf "$ans" | tr '[:upper:]' '[:lower:]') 
