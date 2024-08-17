@@ -23,15 +23,14 @@ I tested the script on the following distros ( most of them on the (officials) d
 - Ubuntu 18.04.6 LTS
 - Ubuntu 20.04.6 LTS
 - Ubuntu 22.04.4 LTS
-- Fedora Linux 40 (Container Image) (hostname didnt work correctly and printed errors)
+- Fedora Linux 40 (Container Image)
 - CentOS Linux 8
-- Arch Linux VERSION_ID=20240714.0.246936 (hostname didnt work)
+- Arch Linux VERSION_ID=20240714.0.246936
 - Alpine Linux v3.20.1
 - Debian GNU/Linux 12 (bookworm)
-- openSUSE Leap 15.6 (hostname didnt work)
+- openSUSE Leap 15.6
 
-Some distros had problem with printing tput/ansi color with echo so i modified the script to use printf and optionnally ansi colors instead of tput)
-And thats it. For the hostname problem im not sure if its caused by the fact that i tried it on minimal install (Docker images), im now using cat /proc/sys/kernel/hostname if hostname throw errors.
+Some distros had problem with printing tput/ansi color with echo so i modified the script to use printf and optionnally ansi colors instead of tput). For the hostname there was a problem too, im not sure if it was caused by the fact that i tried it on minimal install (Docker images), im now using cat /proc/sys/kernel/hostname if hostname throw errors.
 
 
 # INSTALLATION
