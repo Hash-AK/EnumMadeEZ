@@ -17,9 +17,9 @@ This is a WIP script used to enumerate and find system info about a Linux machin
 
 More coming later. 
 
-# COMPTIBILITY
-I tested the script on the following distros ( most of them on official docker containers) :
-- Kali Linux 2024.2
+# COMPATIBILITY
+I tested the script on the following distros ( most of them on the (officials) docker containers) :
+- Kali Linux 2024.2 (that one was the official Kali .ova virtual machine)
 - Ubuntu 18.04.6 LTS
 - Ubuntu 20.04.6 LTS
 - Ubuntu 22.04.4 LTS
@@ -30,12 +30,12 @@ I tested the script on the following distros ( most of them on official docker c
 - Debian GNU/Linux 12 (bookworm)
 - openSUSE Leap 15.6 (hostname didnt work)
 
-Some dirstros had problem with printing tput/ansi color with echo so i modified the script to use printf and optionnally ansi colors instead of tput)
-And thats it. For the hostname problem im not sure if its because thoose where minimal install (Docker images).
+Some distros had problem with printing tput/ansi color with echo so i modified the script to use printf and optionnally ansi colors instead of tput)
+And thats it. For the hostname problem im not sure if its caused by the fact that i tried it on minimal install (Docker images), im now using cat /proc/sys/kernel/hostname if hostname throw errors.
 
 
 # INSTALLATION
-The instalation is pretty simple, install git, git clone the repo then give exec permission to the file, and eecute it! No argument needed
+The instalation is pretty simple, install git, git clone the repo then give exec permission to the file, and execute it! No argument needed 
 
 `sudo apt update && sudo apt install git`
 
