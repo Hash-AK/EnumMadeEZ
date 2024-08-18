@@ -87,10 +87,7 @@ printf "${GREEN}"
 awk -F: '($3 >= 1000 && $1 != "nobody") || $1 == "root" {print $1}' /etc/passwd > /tmp/EnumMadeEz/users.txt
 cat /tmp/EnumMadeEz/users.txt
 printf "${NC}\n"
-printf "${RED}[*] Files with SUID bits : (saved to /tmp/EnumMadeEz/SUIDFiles.txt \n${GREEN}"
-find / -perm -u=s -type f 2>/dev/null > /tmp/EnumMadeEz/SUIDFiles.txt || echo "No SUID Files found" 
-printf "$(cat /tmp/EnumMadeEz/SUIDFiles.txt)\n${NC}"
-
+printf "${RED}[*] AppArmor state : ${GREEN} $(aa-enabled 2>/dev/null || echo "AppArmor not installed")\n${NC}"
 
 
 # Ask if the user wants to autoclean /tmp/EnumMadeEz
