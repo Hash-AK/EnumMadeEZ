@@ -87,7 +87,7 @@ printf "${GREEN}"
 awk -F: '($3 >= 1000 && $1 != "nobody") || $1 == "root" {print $1}' /etc/passwd > /tmp/EnumMadeEz/users.txt
 cat /tmp/EnumMadeEz/users.txt
 printf "${NC}\n"
-printf "${RED}[*] AppArmor state : ${GREEN} $(aa-enabled 2>/dev/null || echo "AppArmor not installed")\n${NC}"
+printf "${RED}[*] Is AppArmor enabled? : ${GREEN} $(aa-enabled 2>/dev/null || echo "AppArmor not installed")\n${NC}"
 
 
 # Ask if the user wants to autoclean /tmp/EnumMadeEz
