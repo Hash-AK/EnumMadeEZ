@@ -18,7 +18,7 @@ else
 fi
 # Create directory if it doesn't exist
 mkdir -p /tmp/EnumMadeEz/
-
+enummadeezdir=/tmp/EnumMadeEz/
 # Print banner and information with colors using printf
 printf "${GREEN}"
 printf " _____                     ___  ___          _          _______ ______\n"
@@ -87,8 +87,12 @@ printf "${GREEN}"
 awk -F: '($3 >= 1000 && $1 != "nobody") || $1 == "root" {print $1}' /etc/passwd > /tmp/EnumMadeEz/users.txt
 cat /tmp/EnumMadeEz/users.txt
 printf "${NC}\n"
-printf "${RED}[*] Is AppArmor enabled? : ${GREEN} $(aa-enabled 2>/dev/null || echo "AppArmor not installed")\n${NC}"
-
+printf "${RED}[*] Is AppArmor enabled? : ${GREEN} $(aa-enabled 2>/dev/null || echo "\nAppArmor not installed or disabled (if its installed you will get a message before this one)")\n${NC}"
+#TODO : add history copy + regex to catch interesting things ( mysql, passwords, special location for keys, etc)
+printf "${RED}[*] Checking for history file...\n ${NC}"
+cat ~/.bash_history 2>/dev/null >> /tmp/EnumMadeEz/history.txt
+cat ~/.zsh_history 2>/dev/null >> /tmp/EnumMadeEz/history.txt
+echo "${GREEN} Done! Copied to /tmp/EnumMadeEz/history.txt ${NC}"
 
 # Ask if the user wants to autoclean /tmp/EnumMadeEz
 printf "${RED}Do you want to auto clean? CAUTION: If you do so, all info in /tmp/EnumMadeEz/ will be deleted. [y/n]: ${NC}"
