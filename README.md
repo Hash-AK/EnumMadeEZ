@@ -15,7 +15,11 @@ This is a WIP script used to enumerate and find system info about a Linux machin
 
 - Other user accounts from /etc/passwd (include root)
 
-More coming later. 
+- The current state of AppArmor
+
+- The content of ~/.zsh_history and ~/.bash_history
+
+- More coming later. 
 
 # COMPATIBILITY
 I tested the script on the following distros ( most of them on the (officials) docker containers) :
@@ -46,3 +50,15 @@ The instalation is pretty simple, install git, git clone the repo then give exec
 
 `./EnumMadeEZ.sh`
 
+You can then go to /tmp/EnumMadeEz/ to see what the script copied (dont autoclean when prompted too, as it will delete the directory)
+
+
+
+# TODO 
+[1] Add uniq sorting in the history copied, with regex to find interestint credentials (ex. mysql -p, echo "user:password" > creds. etc)
+[2] Add a prompt at start to keep the user's password (if given) in a var so its possible to test sudo -l
+[3] Add CVE detections based on kernel, sudo version, etc
+[4] Add GTFObin support to automatically find way to exploit sudo -l authorized binaries
+[5] Add a find command to find suid/guid binaries
+[6] Add writeable directory finder
+[7] Add a check-confg-files script to verify sql, wp, nginx config file for passwords
