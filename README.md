@@ -55,7 +55,7 @@ You can then go to /tmp/EnumMadeEz/ to see what the script copied (dont autoclea
 
 
 # TODO 
-[1] Add uniq sorting in the history copied, with regex to find interestint credentials (ex. mysql -p, echo "user:password" > creds. etc)
+[1] Add uniq sorting in the history copied, with regex to find interesting credentials (ex. mysql -p, echo "user:password" > creds. etc)\n
 [2] Add a prompt at start to keep the user's password (if given) in a var so its possible to test sudo -l
 [3] Add CVE detections based on kernel, sudo version, etc
 [4] Add GTFObin support to automatically find way to exploit sudo -l authorized binaries
