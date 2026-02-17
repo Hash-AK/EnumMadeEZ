@@ -67,7 +67,14 @@ if [ "$(ls -la ~/.ssh/ 2>/dev/null)" ]; then
         printf "${BLUE}"
         ls ~/.ssh/id*
         printf "${NC}\n"
-        cat ~/.ssh/id* > /tmp/EnumMadeEz/SSHKeys.txt
+        #cat ~/.ssh/id* > /tmp/EnumMadeEz/SSHKeys.txt
+        for i in ~/.ssh/id*; do
+            echo "" >> /tmp/EnumMadeEz/SSHKeys/txt
+            echo "$i" >> /tmp/EnumMadeEz/SSHKeys.txt
+            echo "" >> /tmp/EnumMadeEz/SSHKeys.txt
+            cat $i >> /tmp/EnumMadeEz/SSHKeys.txt
+            echo "" >> /tmp/EnumMadeEz/SSHKeys/txt
+        done
         printf "${GREEN}All id* files copied to /tmp/EnumMadeEz/SSHKeys.txt\n${NC}"
         printf "${GREEN}$(grep -o "BEGIN" /tmp/EnumMadeEz/SSHKeys.txt | wc -l) BEGIN word occurrence in the keys...\n${NC}"
     else
@@ -90,7 +97,10 @@ printf "${NC}\n"
 printf "${RED}[*] Is AppArmor enabled? : ${GREEN} $(aa-enabled 2>/dev/null || echo "\nAppArmor not installed or disabled (if its installed you will get a message before this one)")\n${NC}"
 #TODO : add history copy + regex to catch interesting things ( mysql, passwords, special location for keys, etc)
 printf "${RED}[*] Checking for history file...\n ${NC}"
+echo "Bash History: " >> /tmp/EnumMadeEz/history.txt
 cat ~/.bash_history 2>/dev/null >> /tmp/EnumMadeEz/history.txt
+echo "" >> /tmp/EnumMadeEz/history.txt
+echo "ZSH History: " >> /tmp/EnumMadeEz/history.txt
 cat ~/.zsh_history 2>/dev/null >> /tmp/EnumMadeEz/history.txt
 echo "${GREEN} Done! Copied to /tmp/EnumMadeEz/history.txt ${NC}"
 
