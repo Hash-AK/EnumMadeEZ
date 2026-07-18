@@ -31,7 +31,13 @@ printf "\n"
 printf "\n"
 printf "${GREEN}*** EnumMadeEz, a tool developed by Hash-AK. ***${NC}\n"
 printf "${GREEN}https://github.com/Hash-AK/EnumMadeEZ${NC}\n\n"
-
+printf "${RED}Do you have the password for this account? [y/n]: ${NC}"
+read -r ans
+ans=$(printf "$ans" | tr '[:upper:]' '[:lower:]') 
+if [ "$ans" = "y" ]; then
+    printf "${RED}Please enter the user's password: ${NC}"
+    read -r password
+fi
 # Print hostname
 printf "${RED}[*] Hostname${NC}\n"
 printf "${GREEN}$(hostname 2>/dev/null || cat /proc/sys/kernel/hostname)${NC}\n"
@@ -67,9 +73,8 @@ if [ "$(ls -la ~/.ssh/ 2>/dev/null)" ]; then
         printf "${BLUE}"
         ls ~/.ssh/id*
         printf "${NC}\n"
-        #cat ~/.ssh/id* > /tmp/EnumMadeEz/SSHKeys.txt
         for i in ~/.ssh/id*; do
-            echo "" >> /tmp/EnumMadeEz/SSHKeys/txt
+            echo "" >> /tmp/EnumMadeEz/SSHKeys.txt
             echo "$i" >> /tmp/EnumMadeEz/SSHKeys.txt
             echo "" >> /tmp/EnumMadeEz/SSHKeys.txt
             cat $i >> /tmp/EnumMadeEz/SSHKeys.txt
